@@ -1,0 +1,53 @@
+#check {
+    display: none;
+
+    &:checked ~ .sidebar {
+        left: 0;
+    }
+
+    &:checked ~ label #toggleMenu {
+        opacity: 0;
+        left: 255px;
+        pointer-events: none;
+    }
+
+    &:checked ~ label #cancel {
+        left: 200px;
+        opacity: 1;
+    }
+
+    &:checked ~ .container {
+        margin-left: 250px;
+    }
+}
+
+label {
+    #toggleMenu,
+    #cancel {
+        position: absolute;
+        cursor: pointer;
+        background-color: $backgroundHeader;
+        border-radius: 3px;
+    }
+    
+    #toggleMenu {
+        left: 20px;
+        top: 20px;
+        color: #fff;
+        font-size: 35px;
+        padding: 6px 12px;
+        z-index: 0;
+        transition: all .5s;
+    }
+
+    #cancel {
+        z-index: 20;
+        left: -195px;
+        opacity: 0;
+        top: 17px;
+        font-size: 30px;
+        color: $cancelColor;
+        padding: 4px 9px;
+        transition: opacity .3s .5s;
+    }
+}
